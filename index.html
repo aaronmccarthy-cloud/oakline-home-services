@@ -29,7 +29,7 @@
       <a class="brand" href="#home" aria-label="Oakline home"><span class="brand-mark">⌂</span><span>oakline<span style="color:var(--green)">.</span></span></a>
       <div class="navlinks" id="navlinks"><a href="#services">Services</a><a href="#about">Why Oakline</a><a href="#projects">Our work</a><a href="#contact">Contact</a></div>
       <a class="btn btn-dark" href="#contact">Request a quote â</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">â°</button>
+      aria-expanded="false">☰</button>
     </nav>
   </header>
   <main>
@@ -82,8 +82,8 @@
   <script>
     const menuBtn=document.getElementById('menuBtn');
     const navlinks=document.getElementById('navlinks');
-    menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'Ã':'â°';});
-    navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='â°';}));
+    menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+    navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
     document.getElementById('year').textContent=new Date().getFullYear();
     document.getElementById('quoteForm').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.currentTarget);const notice=document.getElementById('notice');notice.textContent='Demo preview ready for '+data.get('name')+'. Service: '+data.get('service')+'. This enquiry has not been sent or saved. In a real project, connect this form to a secure form service before launch.';notice.classList.add('show');});
   </script>
